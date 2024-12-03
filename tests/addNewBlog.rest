@@ -2,8 +2,8 @@ POST http://localhost:3003/api/blogs/
 Content-Type: application/json
 
 {
-  "title": "Jännittävä kasvisruokablogi",
-  "author": "Venla Vegaani",
-  "url": "www.lihaton.com",
-  "likes": 3
+  "title": "Pehmeän linjan helmenkalastajat",
+  "author": "Kai Helmenanastaja",
+  "url": "www.helmetsarebelongtous.com",
+  "likes": 13
 }
