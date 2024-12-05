@@ -18,6 +18,13 @@ const blogs = [
     "id": "674deb4b477be664dd515d44"
   },
   {
+    "title": "Jumppaa viidessä minuutissa",
+    "author": "Laila Lihansyöjä",
+    "url": "www.jumppaaon.com",
+    "likes": 2,
+    "id": "674deb4b477be664dd515d44"
+  },
+  {
     "title": "Keskinkertainen kalaruokablogi",
     "author": "Kalle Kalastaja",
     "url": "www.lihaaonkalakin.com",
@@ -58,7 +65,15 @@ describe('total likes', () => {
 
   test('of a bigger list is calculated right', () => {
     const result = listHelper.totalLikes(blogs)
-    assert.strictEqual(result, 12)
+    assert.strictEqual(result, 14)
   })
 })
 
+describe('most popular', () => {
+  test('blog is spotted and returned correctly', () => {
+    const result = listHelper.favoriteBlog(blogs)
+    assert.strictEqual(result.title, "Jännittävä liharuokablogi")
+    assert.strictEqual(result.author, "Laila Lihansyöjä")
+    assert.strictEqual(result.likes, 5)
+  })
+})
