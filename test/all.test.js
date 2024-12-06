@@ -70,10 +70,54 @@ describe('total likes', () => {
 })
 
 describe('most popular', () => {
+  emptyList = []
+
+  test('empty list is handled properly', () => {
+    const result = listHelper.favoriteBlog(blogs)
+    assert.strict(result, null)
+  })
+
   test('blog is spotted and returned correctly', () => {
     const result = listHelper.favoriteBlog(blogs)
+    console.log("favoriteBlog", result)
     assert.strictEqual(result.title, "Jännittävä liharuokablogi")
     assert.strictEqual(result.author, "Laila Lihansyöjä")
     assert.strictEqual(result.likes, 5)
+  })
+})
+
+describe('most blogs', () => {
+  emptyList = []
+
+  test('empty list is handled properly', () => {
+    const result = listHelper.mostBlogs(blogs)
+    assert.strict(result, null)
+  })
+
+  test('blogger is identified correctly and the count is right', () => {
+    const result = listHelper.mostBlogs(blogs)
+    console.log("mostBlogs", result)
+    assert.strictEqual(result.author, "Laila Lihansyöjä")
+    assert.strictEqual(result.blogs, 2)
+  })
+})
+
+describe('most likes', () => {
+  emptyList = []
+
+  test('empty list is handled properly', () => {
+    const result = listHelper.mostLikes(blogs)
+    assert.strict(result, null)
+  })
+
+  test('blogger is identified correctly', () => {
+    const result = listHelper.mostLikes(blogs)
+    console.log("mostLikes", result)
+    assert.strictEqual(result.author, "Laila Lihansyöjä")
+  })
+
+  test('count is correct', () => {
+    const result = listHelper.mostLikes(blogs)
+    assert.strictEqual(result.likes, 7)
   })
 })
