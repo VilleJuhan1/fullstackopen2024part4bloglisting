@@ -2,8 +2,8 @@ POST http://localhost:3003/api/blogs/
 Content-Type: application/json
 
 {
-  "title": "Pehmeän linjan helmenkalastajat",
-  "author": "Kai Helmenanastaja",
-  "url": "www.helmetsarebelongtous.com",
-  "likes": 13
+  "title": "Autot-elokuvan ystäville",
+  "author": "Salama Mcqueen",
+  "url": "www.autot.com",
+  "likes": 12
 }
