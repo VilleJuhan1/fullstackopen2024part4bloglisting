@@ -4,6 +4,5 @@ Content-Type: application/json
 {
   "title": "Autot-elokuvan ystäville",
   "author": "Salama Mcqueen",
-  "url": "www.autot.com",
-  "likes": 12
+  "url": "www.autot.com"
 }

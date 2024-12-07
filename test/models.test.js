@@ -79,7 +79,7 @@ describe('most popular', () => {
 
   test('blog is spotted and returned correctly', () => {
     const result = listHelper.favoriteBlog(blogs)
-    console.log("favoriteBlog", result)
+    //console.log("favoriteBlog", result)
     assert.strictEqual(result.title, "Jännittävä liharuokablogi")
     assert.strictEqual(result.author, "Laila Lihansyöjä")
     assert.strictEqual(result.likes, 5)
@@ -96,7 +96,7 @@ describe('most blogs', () => {
 
   test('blogger is identified correctly and the count is right', () => {
     const result = listHelper.mostBlogs(blogs)
-    console.log("mostBlogs", result)
+    //console.log("mostBlogs", result)
     assert.strictEqual(result.author, "Laila Lihansyöjä")
     assert.strictEqual(result.blogs, 2)
   })
@@ -112,7 +112,7 @@ describe('most likes', () => {
 
   test('blogger is identified correctly', () => {
     const result = listHelper.mostLikes(blogs)
-    console.log("mostLikes", result)
+    //console.log("mostLikes", result)
     assert.strictEqual(result.author, "Laila Lihansyöjä")
   })
 
