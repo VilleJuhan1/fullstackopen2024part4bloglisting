@@ -1,10 +1,27 @@
 const mongoose = require('mongoose')
 
 const blogSchema = mongoose.Schema({
-  title: String,
-  author: String,
-  url: String,
-  likes: Number
+  title: {
+    type: String,
+    required: [true, 'title required']
+  },
+  author: {
+    type: String,
+    required: [true, 'author required']
+  },
+  url: {
+    type: String,
+    validate: {
+      validator: function(v) {
+        return /^(www\.)[a-zA-Z0-9]+(\.[a-zA-Z]{2,})+$/.test(v)
+      },
+      message: props => `${props.value} should be in the format www.example.com`
+    },
+    required: [true, 'URL required']
+  },
+  likes: {
+    type: Number
+  }
 })
 
 blogSchema.set('toJSON', {

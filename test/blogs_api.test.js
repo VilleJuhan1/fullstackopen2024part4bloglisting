@@ -43,7 +43,7 @@ describe.only('POST to /api/blogs', async () => {
       .send({
         title: 'Tukisivusto kroonisille ripuloijille',
         author: 'M.A. Halöysäl',
-        url: 'http://ripuliranne.com',
+        url: 'www.ripuliranne.com',
         likes: 0
       })
       .expect(200)
@@ -59,7 +59,7 @@ describe.only('POST to /api/blogs', async () => {
       .send({
         title: 'Tukisivusto kroonisille ripuloijille',
         author: 'M.A. Halöysäl',
-        url: 'http://ripuliranne.com',
+        url: 'www.ripuliranne.com',
         likes: 0
       })
       .expect(200)
@@ -72,9 +72,27 @@ describe.only('POST to /api/blogs', async () => {
     const newBlog = blogs[blogs.length - 1]
     assert.strictEqual(newBlog.title, 'Tukisivusto kroonisille ripuloijille')
     assert.strictEqual(newBlog.author, 'M.A. Halöysäl')
-    assert.strictEqual(newBlog.url, 'http://ripuliranne.com')
+    assert.strictEqual(newBlog.url, 'www.ripuliranne.com')
     assert.strictEqual(newBlog.likes, 0)
   })
+  test.only('dont work when the title is missing', async () => {
+    const action = await api.post('/api/blogs')
+      .send({
+        author: 'M.A. Halöysäl',
+        url: 'www.ripuliranne.com',
+        likes: 0
+      })
+      .expect(400)
+    })
+  test.only('dont work when the url is missing', async () => {
+    const action = await api.post('/api/blogs')
+      .send({
+        title: 'Tukisivusto kroonisille ripuloijille',
+        author: 'M.A. Halöysäl',
+        likes: 0
+      })
+      .expect(400)
+    })
 })
 
 after(async () => {
