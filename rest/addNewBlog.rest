@@ -4,6 +4,6 @@ Content-Type: application/json
 {
   "title": "Kummelin kultakuume keskustelupiiri",
   "author": "Jönssi",
-  "url": "www.paskakönkäänkuru.fi",
+  "url": "www.paskaksdgankuru.fi",
   "likes": 532
 }
