@@ -4,8 +4,11 @@ const mongoose = require('mongoose')
 const supertest = require('supertest')
 const app = require('../app')
 const api = supertest(app)
-const Blog = require('../models/blog')
 const helper = require('./test_helper')
+const bcrypt = require('bcrypt')
+
+const Blog = require('../models/blog')
+const User = require('../models/user')
 
 beforeEach(async () => {
   await Blog.deleteMany({})
@@ -95,8 +98,8 @@ describe('POST to /api/blogs', async () => {
     })
 })
 
-describe.only('DELETE a blog', async () => {
-  test.only('by id works and the DB length decreases correctly', async () => {
+describe('DELETE a blog', async () => {
+  test('by id works and the DB length decreases correctly', async () => {
     const initialBlogs = await api.get('/api/blogs')
     const blogToDelete = initialBlogs.body[0]
     //console.log(initialBlogs, blogToDelete)
@@ -111,8 +114,8 @@ describe.only('DELETE a blog', async () => {
   })
 })
 
-describe.only('PUT method', async () => {
-  test.only('works and an entry is properly updated according to given parameters', async () => {
+describe('PUT method', async () => {
+  test('works and an entry is properly updated according to given parameters', async () => {
     const initialBlogs = await api.get('/api/blogs')
     const blogToUpdateId = initialBlogs.body[0].id
     
@@ -130,7 +133,7 @@ describe.only('PUT method', async () => {
     //console.log(updatedBlogs)
     assert.strictEqual(updatedBlogs.body[0].title, 'Se Wsi Barembi Blogitexti')
   })
-  test.only('can be used to increase likes', async () => {
+  test('can be used to increase likes', async () => {
     const initialBlogs = await api.get('/api/blogs')
     const blogToUpdateId = initialBlogs.body[0].id
     const blogOldLikes = initialBlogs.body[0].likes
@@ -147,6 +150,8 @@ describe.only('PUT method', async () => {
     assert.strictEqual(updatedBlogs.body[0].likes, 4)    
   })
 })
+
+
 
 after(async () => {
   await mongoose.connection.close()
