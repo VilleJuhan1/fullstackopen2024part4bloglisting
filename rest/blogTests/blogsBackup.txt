@@ -1,0 +1,51 @@
+[
+  {
+    "title": "Jännittävä kasvisruokablogi",
+    "author": "Venla Vegaani",
+    "url": "www.lihaton.com",
+    "likes": 3,
+    "id": "674de506045d215735ebc096"
+  },
+  {
+    "title": "Jännittävä liharuokablogi",
+    "author": "Laila Lihansyöjä",
+    "url": "www.lihaaon.com",
+    "likes": 5,
+    "id": "674deb4b477be664dd515d44"
+  },
+  {
+    "title": "Keskinkertainen kalaruokablogi",
+    "author": "Kalle Kalastaja",
+    "url": "www.lihaaonkalakin.com",
+    "likes": 4,
+    "id": "674f2397da366ec16e5fda57"
+  },
+  {
+    "title": "Kovan linjan helmenkalastajat",
+    "author": "Kalle Helmenalastaja",
+    "url": "www.helmee.com",
+    "likes": 1,
+    "id": "674f281c70cb458c5a049242"
+  },
+  {
+    "title": "Pehmeän linjan helmenkalastajat",
+    "author": "Kai Helmenanastaja",
+    "url": "www.helmetsarebelongtous.com",
+    "likes": 13,
+    "id": "674f2bcaebc118cd80d9adde"
+  },
+  {
+    "title": "Autot-elokuvan ystäville",
+    "author": "Salama Mcqueen",
+    "url": "www.autot.com",
+    "likes": 12,
+    "id": "67542ed0c22bbdb10d579fdf"
+  },
+  {
+    "title": "Kummelin kultakuume keskustelupiiri",
+    "author": "Jönssi",
+    "url": "www.paskakonkhankuru.fi",
+    "likes": 534,
+    "id": "6755349665868fc1c60eba88"
+  }
+]
