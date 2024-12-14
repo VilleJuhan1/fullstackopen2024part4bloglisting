@@ -1,6 +1,6 @@
 POST http://localhost:3003/api/blogs
 Content-Type: application/json
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im1ha2tlMiIsImlkIjoiNjc1ZDUzNWQzZTYzMzUwZmNjYWFkNzk0IiwiaWF0IjoxNzM0MTY5NTEwfQ.CIE9nzLyJjnaFz5Nhbfb-u9grrfet0u1PMsrs3Euuco
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im1ha2tlMiIsImlkIjoiNjc1ZDUzNWQzZTYzMzUwZmNjYWFkNzk0IiwiaWF0IjoxNzM0MTY5NTEwfQ.CIE9nzLyJjnaFz5Nhbfb-u9grrfet0u1PMsrs3Euuco
 
 {
   "title": "Kummelin kultakuume parempi keskustelupiiri",
