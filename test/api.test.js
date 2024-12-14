@@ -13,6 +13,8 @@ const User = require('../models/user')
 beforeEach(async () => {
   await Blog.deleteMany({})
   await Blog.insertMany(helper.initialBlogs)
+  await User.deleteMany({})
+  await User.insertMany(helper.initialUsers)
 })
 
 test('blogs are returned as json', async () => {
@@ -151,7 +153,58 @@ describe('PUT method', async () => {
   })
 })
 
+// User tests begin
 
+describe.only('Adding a user', async () => {
+  test.only('initial users exist and the first one is pewdiepie', async () => {
+    const initUsers = await api.get('/api/users')
+      .expect(200)
+      //console.log(initUsers)
+    
+    assert.strictEqual(initUsers.body.length, 2)
+    assert.strictEqual(initUsers.body[0].username, "pewdiepie")
+  })
+  test.only('works properly when parameters are valid', async () => {
+    const action = await api.post('/api/users')
+    .send({
+      username: 'mororallaa',
+      name: "Matti Morottaja",
+      password: "pspspspsps"
+    })
+
+    const users = await api.get('/api/users')
+      .expect(200)
+
+    assert.strictEqual(users.body.length, 3)
+    assert.strictEqual(users.body[2].username, "mororallaa")
+
+  })
+  test.only('does not work when username is too short', async () => {
+    const action = await api.post('/api/users')
+      .send({
+        username: 'MA',
+        name: "Matti Alanne",
+        password: 'salasana'
+      })
+      .expect(400)
+
+    const users = await api.get('/api/users')
+    assert.strictEqual(users.body.length, 2)
+  })
+  test.only('does not work when password is too short', async () => {
+    const action = await api.post('/api/users')
+      .send({
+        username: 'manummine',
+        name: "Matti Alanne",
+        password: 'sa'
+      })
+      .expect(400)
+
+    const users = await api.get('/api/users')
+    assert.strictEqual(users.body.length, 2)
+    
+  })
+})
 
 after(async () => {
   await mongoose.connection.close()

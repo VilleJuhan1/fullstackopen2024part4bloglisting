@@ -1,1 +1,1 @@
-# fullstackopen2024part4bloglisting
+# Fullstack Open 2024 - 2025 course exercise
