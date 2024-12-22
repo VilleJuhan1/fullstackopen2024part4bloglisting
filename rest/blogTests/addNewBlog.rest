@@ -1,0 +1,11 @@
+POST http://localhost:3003/api/blogs
+Content-Type: application/json
+Authorization: Bearer <token>
+
+{
+  "title": "Orwel 1985",
+  "author": "Haapis",
+  "url": "www.deepstateisreal.fi",
+  "likes": 2,
+  "user": "675d535d3e63350fccaad794"
+}

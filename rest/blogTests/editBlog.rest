@@ -1,0 +1,9 @@
+PUT http://localhost:3003/api/blogs/6755349665868fc1c60eba88
+Content-Type: application/json
+
+{
+  "title": "Kummelin kultakuume keskustelupiiri",
+  "author": "Jönssi",
+  "url": "www.paskakonkhankuru.fi",
+  "likes": 200
+}

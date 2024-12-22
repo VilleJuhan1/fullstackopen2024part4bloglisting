@@ -9,18 +9,6 @@ const initialBlogs = [
     "likes": 3,
   },
   {
-    "title": "Jännittävä liharuokablogi",
-    "author": "Laila Lihansyöjä",
-    "url": "www.lihaaon.com",
-    "likes": 5,
-  },
-  {
-    "title": "Jumppaa viidessä minuutissa",
-    "author": "Laila Lihansyöjä",
-    "url": "www.jumppaaon.com",
-    "likes": 2,
-  },
-  {
     "title": "Keskinkertainen kalaruokablogi",
     "author": "Kalle Kalastaja",
     "url": "www.lihaaonkalakin.com",
@@ -34,11 +22,6 @@ const initialUsers = [
     "name": "Hans Hansson",
     "password": "password"
   },
-  {
-    "username": "jonsson",
-    "name": "Jorgen Jonsson",
-    "password": "salainensana"
-  }
 ]
 
 const nonExistingId = async () => {
@@ -54,6 +37,19 @@ const blogsInDb = async () => {
   return blogs.map(blog => blog.toJSON())
 }
 
+const nonExistingUserId = async () => {
+  const user = new User({ username: 'willremovethissoon', password: 'password' })
+  await user.save()
+  await user.deleteOne()
+
+  return user._id.toString()
+}
+
+const usersInDb = async () => {
+  const users = await User.find({})
+  return users.map(user => user.toJSON())
+}
+
 module.exports = {
-  initialBlogs, initialUsers, nonExistingId, blogsInDb
+  initialBlogs, initialUsers, nonExistingId, blogsInDb, nonExistingUserId, usersInDb
 }
