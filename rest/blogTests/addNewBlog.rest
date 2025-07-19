@@ -3,9 +3,9 @@ Content-Type: application/json
 Authorization: Bearer <token>
 
 {
-  "title": "Orwel 1985",
-  "author": "Haapis",
+  "title": "Orwel 1986",
+  "author": "Haapanen",
   "url": "www.deepstateisreal.fi",
   "likes": 2,
-  "user": "675d535d3e63350fccaad794"
+  "user": "68626b0da7daa9f00ea2e611"
 }

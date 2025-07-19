@@ -10,6 +10,13 @@ const loginRouter = require('./controllers/login')
 const logger = require('./utils/logger')
 const middleware = require('./utils/middleware')
 
+// Only include the testing router if the environment is set to test
+// This allows for resetting the database during tests without affecting production or development environments
+if (process.env.NODE_ENV === 'test') {
+  const testingRouter = require('./controllers/testing')
+  app.use('/api/testing', testingRouter)
+}
+
 // mongoose.connect(config.MONGODB_URI)
 
 mongoose.set('strictQuery', false)
